@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">
+    Shopping Cart
+</h1>
+
+{% if products %}
+
+<table>
+
+    <tr>
+
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+
+    </tr>
+
+{% for item in products %}
+
+    <tr>
+
+        <td>
+            {{ item.product['name'] }}
+        </td>
+
+        <td>
+            ₹{{ "%.2f"|format(item.product['price']) }}
+        </td>
+
+        <td>
+            {{ item.quantity }}
+        </td>
+
+        <td>
+            ₹{{ "%.2f"|format(item.subtotal) }}
+        </td>
+
+        <td>
+
+            <a
+                href="{{ url_for(
+                    'remove_from_cart',
+                    product_id=item.product['id']
+                ) }}"
+            >
+                Remove
+            </a>
+
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+</table>
+
+<div class="cart-total">
+
+    <h2>
+        Total: ₹{{ "%.2f"|format(total) }}
+    </h2>
+
+    <a
+        class="button"
+        href="{{ url_for('checkout') }}"
+    >
+        Proceed to Checkout
+    </a>
+
+</div>
+
+{% else %}
+
+<h2>Your cart is empty.</h2>
+
+<a
+    class="button"
+    href="{{ url_for('home') }}"
+>
+    Continue Shopping
+</a>
+
+{% endif %}
+
+{% endblock %}

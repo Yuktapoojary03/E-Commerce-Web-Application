@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="product-details">
+
+    <img
+        src="{{ product['image'] }}"
+        alt="{{ product['name'] }}"
+    >
+
+    <div>
+
+        <h1>
+            {{ product['name'] }}
+        </h1>
+
+        <p>
+            Category:
+            <strong>
+                {{ product['category'] }}
+            </strong>
+        </p>
+
+        <p>
+            {{ product['description'] }}
+        </p>
+
+        <h2>
+            ₹{{ "%.2f"|format(product['price']) }}
+        </h2>
+
+        <a
+            class="button"
+            href="{{ url_for(
+                'add_to_cart',
+                product_id=product['id']
+            ) }}"
+        >
+            Add to Cart
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

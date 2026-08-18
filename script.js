@@ -1,0 +1,1 @@
+console.log("ShopEasy E-Commerce Application Loaded");

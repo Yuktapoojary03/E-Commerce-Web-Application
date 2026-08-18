@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>Welcome to ShopEasy</h1>
+
+    <p>
+        Find the best products at affordable prices.
+    </p>
+
+</section>
+
+
+<div class="search-box">
+
+    <form action="{{ url_for('search') }}">
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search products..."
+            value="{{ search or '' }}"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+
+<div class="products">
+
+{% for product in products %}
+
+    <div class="card">
+
+        <img
+            src="{{ product['image'] }}"
+            alt="{{ product['name'] }}"
+        >
+
+        <h3>
+            {{ product['name'] }}
+        </h3>
+
+        <p class="category">
+            {{ product['category'] }}
+        </p>
+
+        <p>
+            {{ product['description'] }}
+        </p>
+
+        <h3>
+            ₹{{ "%.2f"|format(product['price']) }}
+        </h3>
+
+        <a
+            class="button"
+            href="{{ url_for('product', product_id=product['id']) }}"
+        >
+            View Product
+        </a>
+
+        <a
+            class="button"
+            href="{{ url_for('add_to_cart', product_id=product['id']) }}"
+        >
+            Add to Cart
+        </a>
+
+    </div>
+
+{% else %}
+
+    <h2>No products found.</h2>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

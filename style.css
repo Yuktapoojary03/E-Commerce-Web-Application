@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+}
+
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 7%;
+
+    background: #222;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+
+    background: #e9ecef;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+
+/* Search */
+
+.search-box {
+    text-align: center;
+    padding: 25px;
+}
+
+.search-box input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button,
+.button {
+    background: #222;
+    color: white;
+
+    border: none;
+
+    padding: 10px 16px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* Products */
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    padding: 30px 7%;
+}
+
+.card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.card .button {
+    display: inline-block;
+
+    margin-top: 10px;
+}
+
+
+/* Product details */
+
+.product-details {
+    display: flex;
+
+    gap: 40px;
+
+    padding: 60px 10%;
+}
+
+.product-details img {
+    width: 400px;
+    max-width: 100%;
+}
+
+
+/* Cart */
+
+.page-title {
+    text-align: center;
+    margin: 40px;
+}
+
+table {
+    width: 85%;
+    margin: auto;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+th,
+td {
+    padding: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: left;
+}
+
+.cart-total {
+    width: 85%;
+    margin: 30px auto;
+
+    text-align: right;
+}
+
+
+/* Checkout */
+
+.checkout {
+    max-width: 600px;
+
+    margin: 50px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 8px 0 20px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+}
+
+.checkout textarea {
+    height: 120px;
+}
+
+
+/* Success */
+
+.success {
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+
+/* Messages */
+
+.message {
+    padding: 15px;
+
+    text-align: center;
+
+    background: #d4edda;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    margin-top: 60px;
+
+    padding: 20px;
+
+    background: #222;
+
+    color: white;
+}
